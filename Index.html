@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我想跟你和好</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .image-container {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .message {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .yes-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .no-btn {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .yes-btn:hover {
+            background-color: #ff5252;
+        }
+        
+        .no-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            font-size: 40px;
+            margin-top: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* 按鈕尺寸 - 更明顯的漸變效果 */
+        #page1 .yes-btn { width: 100px; font-size: 16px; }
+        #page2 .yes-btn { width: 140px; font-size: 18px; }
+        #page3 .yes-btn { width: 180px; font-size: 20px; }
+        #page4 .yes-btn { width: 220px; font-size: 22px; }
+        #page5 .yes-btn { width: 260px; font-size: 24px; padding: 15px 30px; }
+        
+        .no-btn { width: 100px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 頁面1 -->
+        <div class="page active" id="page1">
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDm2Gk2AN__FnXvOV7L4XGRa6NA1MG0wN3sdyUK0kMiA&s" alt="道歉圖片1">
+            </div>
+            <div class="message">可以跟我和好嗎？</div>
+            <div class="buttons">
+                <button class="yes-btn">和好</button>
+                <button class="no-btn">我不要</button>
+            </div>
+        </div>
+        
+        <!-- 頁面2 -->
+        <div class="page" id="page2">
+            <div class="image-container">
+                <img src="https://p3-pc-sign.douyinpic.com/tos-cn-p-0015/owYEBfwhAiuNIFbtoA0giBZkITejAlaTYAqMln~tplv-dy-360p.jpeg?biz_tag=pcweb_cover&card_type=153&column_n=0&from=327834062&lk3s=138a59ce&s=PackSourceEnum_SEARCH&sc=origin_cover&se=false&x-expires=1763614800&x-signature=j6h%2FDT07L%2FC6uabFfeizoFWL2wk%3D" alt="道歉圖片2">
+            </div>
+            <div class="message">可以跟我和好嗎？</div>
+            <div class="buttons">
+                <button class="yes-btn">和好</button>
+                <button class="no-btn">我不要</button>
+            </div>
+        </div>
+        
+        <!-- 頁面3 -->
+        <div class="page" id="page3">
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9eV9hEOxk5BMDb43KMkYtQkzB1MKEGDyTg-NALkeyLg&s=10" alt="道歉圖片3">
+            </div>
+            <div class="message">可以跟我和好嗎？</div>
+            <div class="buttons">
+                <button class="yes-btn">和好</button>
+                <button class="no-btn">我不要</button>
+            </div>
+        </div>
+        
+        <!-- 頁面4 -->
+        <div class="page" id="page4">
+            <div class="image-container">
+                <img src="https://p3-pc-sign.douyinpic.com/tos-cn-p-0015/ogIZrm4Xiv4ivQBIA16qgPARgIBlA1ihzQW2Q~tplv-dy-360p.jpeg?biz_tag=pcweb_cover&card_type=153&column_n=0&from=327834062&lk3s=138a59ce&s=PackSourceEnum_SEARCH&sc=origin_cover&se=false&x-expires=1763614800&x-signature=9sVdI7kkilCoj8ADZk1jY4f%2B86g%3D" alt="道歉圖片4">
+            </div>
+            <div class="message">可以跟我和好嗎？</div>
+            <div class="buttons">
+                <button class="yes-btn">和好</button>
+                <button class="no-btn">我不要</button>
+            </div>
+        </div>
+        
+        <!-- 頁面5 (重複使用圖片4) -->
+        <div class="page" id="page5">
+            <div class="image-container">
+                <img src="https://p3-pc-sign.douyinpic.com/tos-cn-p-0015/ogIZrm4Xiv4ivQBIA16qgPARgIBlA1ihzQW2Q~tplv-dy-360p.jpeg?biz_tag=pcweb_cover&card_type=153&column_n=0&from=327834062&lk3s=138a59ce&s=PackSourceEnum_SEARCH&sc=origin_cover&se=false&x-expires=1763614800&x-signature=9sVdI7kkilCoj8ADZk1jY4f%2B86g%3D" alt="道歉圖片4">
+            </div>
+            <div class="message">可以跟我和好嗎？</div>
+            <div class="buttons">
+                <button class="yes-btn pulse">和好</button>
+                <button class="no-btn">我不要</button>
+            </div>
+        </div>
+        
+        <!-- 成功頁面 -->
+        <div class="page" id="success">
+            <div class="image-container">
+                <img src="https://p3-pc-sign.douyinpic.com/tos-cn-i-0813/oU1lUAnJEACDABAPbAAgIKAehuSCVeIXcWr9C5~noop.jpeg?biz_tag=pcweb_cover&card_type=303&column_n=0&from=327834062&lk3s=138a59ce&s=PackSourceEnum_SEARCH&se=false&x-expires=1763618400&x-signature=4w8CW6M4T9pnIDy%2FKaBsnbBKjxk%3D" alt="成功圖片">
+            </div>
+            <div class="message">愛你 (請cap 圖換取Namco $100 券) 😊</div>
+            <div class="heart">❤️</div>
+        </div>
+    </div>
+
+    <script>
+        // 頁面控制
+        let currentPage = 1;
+        const totalPages = 5;
+        
+        // 獲取所有頁面元素
+        const pages = document.querySelectorAll('.page');
+        
+        // 為所有"我不要"按鈕添加事件監聽器
+        document.querySelectorAll('.no-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // 隱藏當前頁面
+                document.getElementById(`page${currentPage}`).classList.remove('active');
+                
+                // 增加頁面計數
+                currentPage++;
+                
+                // 如果超過總頁數，保持在最後一頁
+                if (currentPage > totalPages) {
+                    currentPage = totalPages;
+                }
+                
+                // 顯示新頁面
+                document.getElementById(`page${currentPage}`).classList.add('active');
+            });
+        });
+        
+        // 為所有"和好"按鈕添加事件監聽器
+        document.querySelectorAll('.yes-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // 隱藏當前頁面
+                document.getElementById(`page${currentPage}`).classList.remove('active');
+                
+                // 顯示成功頁面
+                document.getElementById('success').classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
